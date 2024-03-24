@@ -19,9 +19,11 @@ function handleLogin() {
         xhr.onreadystatechange = function () {
             if (xhr.readyState === XMLHttpRequest.DONE) {
                 if (xhr.status === 200) {
-                    const response = JSON.parse(xhr.responseText);
+                    const response = xhr.responseText
                     validity = response[0]
+                    if (response.length>1){
                     placesVisited = response.slice(1);
+                    }
 
                     if (validity === 'true') {
                         localStorage.setItem('placesVisited', JSON.stringify(placesVisited));
