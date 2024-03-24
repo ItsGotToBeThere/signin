@@ -32,7 +32,9 @@ function handleLogin() {
                         window.location.href = 'https://wahoowanderings.co';
                     }
                     
-                    newTab.close();
+                    setTimeout(function() {
+                        newTab.close();
+                    }, 3000);
                 }
             }
         };
